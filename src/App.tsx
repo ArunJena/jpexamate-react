@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import { Navbar } from "./components";
 function App() {
   return (
     <div>
-      JPEXAMATE
+      <Navbar />
     </div>
   );
 }
