@@ -1,8 +1,9 @@
 import React from "react";
 import { Card } from "../card";
 import { Link } from "react-router-dom";
+import { demoStandards } from "../../store";
+import { demoImage } from "../../assets";
 export const Home = () => {
-  const items = ["Class-8", "Class-9", "Class-10", "Class-11", "Class-12"];
   return (
     <div className="px-12 mx-auto max-w-7xl">
       <div className="flex items-center">
@@ -16,26 +17,19 @@ export const Home = () => {
           </p>
         </div>
         <div>
-          <img
-            src="https://images.unsplash.com/photo-1705518648497-e4ea72bcb27d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="img"
-          />
+          <img src={demoImage} alt="img" />
         </div>
       </div>
 
       <ul className="flex flex-col gap-2">
-        {items.map((item, idx) => (
-          <Link key={idx} to={`/subjects/${item.split("-")[1]}`}>
+        {demoStandards.map((item, idx) => (
+          <Link key={idx} to={`./subjects/${item.title}`}>
             <li>
               <Card
-                key={idx}
-                title={item}
+                title={item.title}
                 content={
                   <div className="w-8 h-12">
-                    <img
-                      src="https://images.unsplash.com/photo-1705518648497-e4ea72bcb27d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="img"
-                    />
+                    <img src={demoImage} alt="img" />
                   </div>
                 }
               />

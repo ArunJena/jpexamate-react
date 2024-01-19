@@ -1,7 +1,7 @@
 import React from "react";
 import { Standards } from "../types";
 
-export const demoStandards: Standards[] = [
+export let demoStandards: Standards[] = [
   {
     title: "standard-8",
     availableSubjects: [
