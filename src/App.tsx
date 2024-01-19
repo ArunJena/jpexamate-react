@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Footer, Home, Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
+import { HomePage, NotePage, SubjectPage } from "./pages";
 function App() {
   return (
     <div className="h-screen flex flex-col">
@@ -10,7 +11,9 @@ function App() {
       </div>
       <div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/subjects/:_class" element={<SubjectPage />} />
+          <Route path="/notes" element={<NotePage />} />
         </Routes>
       </div>
       <div className="mt-auto">

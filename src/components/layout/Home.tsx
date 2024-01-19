@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from "./card";
+import { Card } from "../card";
+import { Link } from "react-router-dom";
 export const Home = () => {
   const items = ["Class-8", "Class-9", "Class-10", "Class-11", "Class-12"];
   return (
@@ -22,20 +23,26 @@ export const Home = () => {
         </div>
       </div>
 
-      {items.map((item, idx) => (
-        <Card
-          key={idx}
-          title={item}
-          content={
-            <div className="w-8 h-12">
-              <img
-                src="https://images.unsplash.com/photo-1705518648497-e4ea72bcb27d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="img"
+      <ul className="flex flex-col gap-2">
+        {items.map((item, idx) => (
+          <Link key={idx} to={`/subjects/${item.split("-")[1]}`}>
+            <li>
+              <Card
+                key={idx}
+                title={item}
+                content={
+                  <div className="w-8 h-12">
+                    <img
+                      src="https://images.unsplash.com/photo-1705518648497-e4ea72bcb27d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="img"
+                    />
+                  </div>
+                }
               />
-            </div>
-          }
-        />
-      ))}
+            </li>
+          </Link>
+        ))}
+      </ul>
     </div>
   );
 };

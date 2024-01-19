@@ -1,3 +1,2 @@
-export { Navbar } from "./Navbar";
-export { Home } from "./Home";
-export { Footer } from "./Footer";
+export * from "./card";
+export * from "./layout";

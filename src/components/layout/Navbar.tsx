@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
           </li>
         </NavLink>
 
-        <NavLink to={"/Notes"}>
+        <NavLink to={"/notes"}>
           <li>
             <p className="flex p-4 items-center hover:bg-gray-50">
               <span>Notes</span>
